@@ -1,12 +1,14 @@
 <div class="container my-5">
-  <form>
+  <form (ngSubmit)=onSubmit() #f="ngForm">
     <div class="form-group d-inline">
-      <label for="search-recipe" class="sr-only"> Search by recipe </label>
+      <label for="searchRecipe" class="sr-only"> Search by recipe </label>
       <input
         type="text"
         class="form-control d-inline col-8 mr-2"
-        id="search-recipe"
+        id="searchRecipe"
         placeholder="Search by recipe"
+        ngModel
+        name="searchRecipe"
       />
     </div>
     <button type="submit" class="btn btn-primary col-2 mb-1">Search</button>
