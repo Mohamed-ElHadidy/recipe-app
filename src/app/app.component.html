@@ -3,9 +3,23 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
+
+  <app-search-input (InputValue)="InputValue=$event"></app-search-input>
+
+  <p>{{ InputValue }} </p>
+  <button (click)='fire()'>fire</button>
+<!--
+  <p>{{recipeArray.uri}} </p>
+  <img [src]="recipeArray.image" alt="">
+  <p>{{recipeArray[0].recipe.[0].label}} </p>
+  <p>{{recipeArray[0].recipe.[0].ingredientLines}} </p>
+  <ul><li *ngFor="let item of items">{{recipeArray[0].recipe.[0].ingredientLines}}</li></ul>
+  <p>{{recipeArray[0].recipe.[0].calories}} </p>
+  <p>{{recipeArray[0].recipe.[0].totalWeight}} </p>
   
-    <app-search-input (InputValue)="searchValue=$event"></app-search-input>
-
-    <p>{{ searchValue }}</p>
-
-<router-outlet></router-outlet>
+  <p *ngFor="let item of recipeArray" let i = index;>{{ recipeArray[i] | json }} </p>
+-->
+<div *ngIf="B.length !== 0">
+  <p *ngFor="let item of B">{{ item.recipe.uri }}</p>
+</div>
+  <router-outlet></router-outlet>

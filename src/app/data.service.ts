@@ -14,9 +14,10 @@ export class DataService {
 
   constructor( private http: HttpClient ) { }
 
-  getRecipesData(querry: string): Observable<any> {
-    const fullUrl = `${this.url}q=${querry}&app_id=${this.app_id}&app_key=${this.app_key}`;
-    return this.http.get(fullUrl);
+  getRecipesData(InputValue: string): Observable<any> {
+     const fullUrl = `${this.url}q=${InputValue}&app_id=${this.app_id}&app_key=${this.app_key}`;
+// const fullUrl = `${this.url}q=pizza&app_id=${this.app_id}&app_key=${this.app_key}`;
+    return this.http.get<any>(fullUrl);
   }
 
 }
