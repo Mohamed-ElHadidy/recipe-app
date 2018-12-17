@@ -6,11 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchInputComponent } from './search-input/search-input.component';
+import { RecipeListComponent } from './recipe-list/recipe-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchInputComponent
+    SearchInputComponent,
+    RecipeListComponent
   ],
   imports: [
     BrowserModule,
