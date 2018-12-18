@@ -7,10 +7,25 @@
         class="form-control d-inline col-8 mr-2"
         id="searchRecipe"
         placeholder="Search by recipe"
-        ngModel
+        [(ngModel)]="inputval"
         name="searchRecipe"
       />
     </div>
     <button type="submit" class="btn btn-primary col-2 mb-1">Search</button>
   </form>
+
+ <div *ngIf="recipeFilteredData.length !== 0" class="wrapme">
+<div *ngFor="let it of recipeFilteredData">
+
+
+  <div class="card" >
+    <img class="card-img-top" [src]="it.recipe.image" alt="it.recipe.label">
+    <div class="card-body">
+      <h5 class="card-title">{{ it.recipe.label }}</h5>
+      <p *ngFor="let item of it.recipe.ingredientLines" class="card-text">{{ item }}</p>
+      <a [href]="it.recipe.url" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
+</div>
 </div>
