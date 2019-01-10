@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class DataService {
   constructor( private http: HttpClient ) { }
 
   getRecipesData(querry: string): Observable<any> {
-    const fullUrl = `${this.url}q=${querry}&from=0&to=100&app_id=${this.app_id}&app_key=${this.app_key}`;
+    const fullUrl = `${this.url}q=${querry}&from=0&to=20&app_id=${this.app_id}&app_key=${this.app_key}`;
     return this.http.get(fullUrl);
   }
 

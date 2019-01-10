@@ -16,6 +16,7 @@ export class SearchInputComponent implements OnInit {
   recipeData: any[] = [];
   recipeFilteredData: any[] = [];
   submitted: boolean = false;
+  rec: any;
 
   constructor(private dataService: DataService) { }
 
@@ -24,17 +25,24 @@ export class SearchInputComponent implements OnInit {
 
   onSubmit() {
     // this.InputValue.emit(this.recipe.value.searchRecipe);
-    this.dataService.getRecipesData(this.inputval)
-      .subscribe(data => this.recipeData = Object.entries(data));
-    if (this.recipeData.length !== 0) {
-      this.recipeData.slice(6).map(sliced => this.recipeFilteredData = sliced[1]);
+    /*  this.dataService.getRecipesData(this.inputval)
+        .subscribe(data => this.recipeData = Object.entries(data));
+      if (this.recipeData.length !== 0) {
+        this.recipeData.slice(6).map(sliced => this.recipeFilteredData = sliced[1]);
+        console.log(this.recipe.value.searchRecipe);
+        console.log(this.recipeData, this.inputval);
+        console.log(this.recipeFilteredData);
+      }
       console.log(this.recipe.value.searchRecipe);
       console.log(this.recipeData, this.inputval);
-      console.log(this.recipeFilteredData);
-    }
-    console.log(this.recipe.value.searchRecipe);
-    console.log(this.recipeData, this.inputval);
-    console.log(this.recipeFilteredData);
+      console.log(this.recipeFilteredData);*/
+
+    this.dataService.getRecipesData(this.inputval)
+      .subscribe(data => {
+        const data$ = Object.entries(data);
+        data$.slice(6).map(sliced => this.rec = sliced[1]);
+        console.log(this.rec);
+      });
   }
 
 }
