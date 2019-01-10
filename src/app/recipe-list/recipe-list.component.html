@@ -1,3 +1,10 @@
-<p>
-  recipe-list works!
-</p>
+<div class="wrapme">
+  <div class="card">
+    <img class="card-img-top" [src]="eachRecipe.recipe.image" [alt]="eachRecipe.recipe.label">
+    <div class="card-body">
+      <h5 class="card-title">{{ eachRecipe.recipe.label }}</h5>
+      <p *ngFor="let item of eachRecipe.recipe.ingredientLines" class="card-text">{{ item }}</p>
+      <a [href]="eachRecipe.recipe.url" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>

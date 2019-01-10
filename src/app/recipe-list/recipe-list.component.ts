@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-recipe-list',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe-list.component.sass']
 })
 export class RecipeListComponent implements OnInit {
-
+  @Input() eachRecipe: any;
   constructor() { }
 
   ngOnInit() {

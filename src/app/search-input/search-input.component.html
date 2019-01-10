@@ -1,16 +1,26 @@
 <div class="container my-5">
-  <form (ngSubmit)=onSubmit() #f="ngForm">
+  <form (ngSubmit)=onSubmit() 
+            #f="ngForm">
     <div class="form-group d-inline">
-      <label for="searchRecipe" class="sr-only"> Search by recipe </label>
-      <input
-        type="text"
-        class="form-control d-inline col-8 mr-2"
-        id="searchRecipe"
-        placeholder="Search by recipe"
-        ngModel
-        name="searchRecipe"
-      />
+      <label 
+            for="searchRecipe" 
+            class="sr-only">
+             Search by recipe 
+      </label>
+      <input 
+            type="text" 
+            class="form-control d-inline col-8 mr-2"
+            id="searchRecipe" 
+            placeholder="Search by recipe"
+            [(ngModel)]="inputval" 
+            name="searchRecipe" />
     </div>
     <button type="submit" class="btn btn-primary col-2 mb-1">Search</button>
   </form>
+</div>
+<div class="wrapme">
+  <app-recipe-list 
+        *ngFor="let eachRecipe of recipeData; let i = index;" 
+        [eachRecipe]="eachRecipe">
+  </app-recipe-list>
 </div>
