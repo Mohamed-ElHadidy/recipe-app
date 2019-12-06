@@ -10,7 +10,7 @@ import { DataService } from '../data.service';
 })
 export class SearchInputComponent implements OnInit {
 
-  @ViewChild('f') recipe: NgForm;
+  @ViewChild('f', { static: true }) recipe: NgForm;
   @Output() InputValue: any = new EventEmitter();
   inputval: string = '';
   recipeData: any;
