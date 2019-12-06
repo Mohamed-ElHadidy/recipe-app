@@ -26,7 +26,7 @@ export class SearchInputComponent implements OnInit {
     this.dataService.getRecipesData(this.inputval)
       .subscribe(data => {
         const data$ = Object.entries(data);
-        data$.slice(6).map(sliced => this.recipeData = sliced[1]);
+        data$.slice(5).map(sliced => this.recipeData = sliced[1]);
         console.log(this.recipeData);
       });
   }
